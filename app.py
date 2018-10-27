@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, request, flash, url_for, get_flashed_messages, redirect
+from flask import Flask, render_template, session, request, flash, url_for, get_flashed_messages, redirect, make_response
 from db import *
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -25,6 +25,7 @@ def index():
 
 @app.route('/login', methods=['POST'])
 def login():
+    has_voted = False
     STUDENTS_ID = str(request.form['std_id'])
 
     query = dennis.query(Students).filter(Students.std_id.in_([STUDENTS_ID]))
@@ -32,11 +33,29 @@ def login():
     # if request.form['std_id'] == 'PS/CSC/15/0000':    #hard coded data
     if result:  
         session['logged_in'] = True
+        has_voted = True
+        new_stamp = request.cookies.get(STUDENTS_ID)
+
+        if new_stamp:
+            print('Has voted as ', new_stamp)
+            return redirect(url_for('error'))
+        else:
+            print('Hasnt voted')
+
     else:
         flash('Massa you have wrong data. Register')
         # print('Massa you have wrong data. Register')
         # tryout a redirect to an authorised error page
-    return index()
+
+    resp = make_response(redirect(url_for('index')))
+    resp.set_cookie('userId', STUDENTS_ID)
+
+
+    if has_voted:
+        new_stamp = 'Dennis'
+        print('set cookie')
+        resp.set_cookie(STUDENTS_ID, new_stamp)
+    return resp
 
 
 
@@ -95,6 +114,12 @@ def sec():
          print('Voted for', vote)
     return render_template('vote.html', role= role, name=name, img=img)
 
+
+
+@app.route('/error')
+def error():
+    user = request.cookies.get('userId')
+    return render_template('error.html', user=user)
 
 
 
