@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> NUPS-G UCC ELECIONS</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <h1>NUPS-G UCC ELECIONS</h1>
+    <h5><i>Please enter your Registration Number below to login</i></h5>
+    <form action="/login" method="POST" class="cf">
+        <div class="half left cf">
+            {% with m = get_flashed_messages() %}
+            {% if m %}
+                {% for message in m %}
+                <!-- the next line is the error message -->
+                <h3>{{ message }}</h3> 
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <input type="text" name="std_id" placeholder="Enter your index number" id="input-name">
+            <input type="submit" value="LOGIN" id="input-submit">
+        </div>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+{
+    "President":{
+        "role": "President",
+        "name": [
+            "KWaku Ananse",
+            "Kwame Onions"
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+        
+    },
+
+    "Secretary":{
+        "role": "Secretary",
+        "name": [
+            "Abena Tomatoes",
+            "Ama Cassava",
+            "Kwame Compiler"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg",
+            "person_1.jpg"
+        ]
+           
+
+    }
+}

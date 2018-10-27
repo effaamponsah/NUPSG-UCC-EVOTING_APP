@@ -1,0 +1,15 @@
+<!-- <p>This is the admin pannel</p> -->
+
+<form action="{{ url_for('admin')}}" method="POST">
+    <h4>Name</h4>
+    <input type="text" name="name" placeholder="enter your name">
+    <h4>Students_Id</h4>
+    <input type="text" name="std_id" placeholder="enter your students">
+    <h4>Hall of residence</h4>
+    <input type="text" name="hall_of_residence" placeholder="enter your Hall">
+    <h4>Wing</h4>
+    <input type="text" name="wing" placeholder="enter your students">
+    <br>
+    <input type="submit" value="Add">
+
+</form>
