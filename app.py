@@ -5,6 +5,7 @@ from sqlalchemy.orm import sessionmaker
 # from werkzeug import secure_filename
 # from flask_images import resized_img_src, Images
 import json, os
+from error import man
 
 engine = create_engine('sqlite:///tut.db', echo=False)
 
@@ -118,8 +119,8 @@ def sec():
 
 @app.route('/error')
 def error():
-    user = request.cookies.get('userId')
-    return render_template('error.html', user=user)
+    e = man()
+    return e
 
 
 
