@@ -2,10 +2,8 @@ from flask import Flask, render_template, session, request, flash, url_for, get_
 from db import *
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-# from werkzeug import secure_filename
-# from flask_images import resized_img_src, Images
 import json, os
-from error import man
+from error import msg
 
 engine = create_engine('sqlite:///tut.db', echo=False)
 
@@ -69,8 +67,9 @@ def admin():
         else:
             data = Students(
                         request.form['name'],
+                        request.form['res'],
                         request.form['std_id'],
-                        request.form['hall_of_residence'],
+                        request.form['hall_of_affiliation'],
                         request.form['wing'],
                     )
             dennis.add(data)
@@ -94,7 +93,7 @@ def vote():
         img = data['President']['images']
 
     if request.method == 'POST':
-        vote = request.form['like']   #do a scheck on the when the user selects none
+        vote = request.form['like']   #do a check on the when the user selects none
         print('Voted for', vote)
         return redirect(url_for('sec'))   #this is where the logic for solving the hall and wings problem will be about. Here we can use a switch case or a simple if-else
     return render_template('vote.html', role=role, img=img, name=name)
@@ -113,13 +112,43 @@ def sec():
     if request.method == 'POST':
          vote = request.form['like']
          print('Voted for', vote)
-    return render_template('vote.html', role= role, name=name, img=img)
+         return redirect(url_for('p_sec'))  
+    return render_template('vote1.html', role= role, name=name, img=img)
+
+
+@app.route('/p_sec', methods=['GET', 'POST'])
+def p_sec():
+    with open(os.path.join('./seed/data.json')) as file:
+        data = json.load(file)
+        role = data['Prayer-Secretary']['role']
+        name = data['Prayer-Secretary']['name']
+        img = data['Prayer-Secretary']['images']
+
+    if request.method == 'POST':
+         vote = request.form['like']
+         print('Voted for', vote)
+         return redirect(url_for('org'))  
+    return render_template('vote2.html', role= role, name=name, img=img)
+
+@app.route('/org', methods=['GET', 'POST'])
+def org():
+    
+    with open(os.path.join('./seed/data.json')) as file:
+        data = json.load(file)
+        role = data['Organizing-Secretary']['role']
+        name = data['Organizing-Secretary']['name']
+        img = data['Organizing-Secretary']['images']
+
+    if request.method == 'POST':
+         vote = request.form['like']
+         print('Voted for', vote)
+    return render_template('vote3.html', role= role, name=name, img=img)
 
 
 
 @app.route('/error')
 def error():
-    e = man()
+    e = msg()
     return e
 
 

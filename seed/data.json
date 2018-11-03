@@ -17,13 +17,72 @@
         "name": [
             "Abena Tomatoes",
             "Ama Cassava",
-            "Kwame Compiler"
+            "Kwame Compiler"   
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg",
+            "person_1.jpg"
+        ]
+           
+
+    },
+
+    "Prayer-Secretary":{
+        "role": "Prayer Secretary",
+        "name": [
+            "Prayer Sec 1 ",
+            "Prayer Sec 2 ",
+            "Prayer Sec 3 "
            
         ],
         "images": [
             "person_1.jpg",
             "person_2.jpg",
             "person_1.jpg"
+        ]
+           
+
+    },
+
+    "Organizing-Secretary":{
+        "role": "Organizing Secretary",
+        "name": [
+            "Organizer 1",
+            "Organizer 2"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+    },
+
+    "School Coordinator":{
+        "role": "School's Coordinator",
+        "name": [
+            "Abena Tomatoes",
+            "Ama Cassava"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+           
+
+    },
+
+    "Welfare Chairperson":{
+        "role": "Welfare Chairperson",
+        "name": [
+            "Abena Tomatoes",
+            "Ama Cassava"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
         ]
            
 

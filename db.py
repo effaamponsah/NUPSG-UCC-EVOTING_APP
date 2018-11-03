@@ -10,16 +10,19 @@ class Students(Base):
     __tablename__ = 'students'
 
     id = Column(Integer, primary_key=True)
-    name = Column('name', String, nullable=False)
-    std_id = Column('index_no', String(20), nullable=False)
-    hall = Column('hall_of_residence', String, nullable=False)
-    wing = Column('wing', String, nullable=False)
+    name = Column('name', String)
+    std_id = Column('index_no', String(20))
+    hall = Column('hall_of_affiliation', String)
+    res = Column('current_residence', String)
+    wing = Column('wing', String)
 
-    def __init__(self, name, std_id, hall, wing):
+    def __init__(self, name, res, std_id, hall, wing):
         self.name = name
         self.std_id = std_id
         self.hall = hall
         self.wing = wing
+        self.res = res
+       
 
 
 class User(Base):
