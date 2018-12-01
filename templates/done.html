@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thanks for voting</title>
+    <script type="text/javascript">
+        function preventBack() {
+          window.history.forward();
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function() {
+          null;
+        };
+      </script>
+</head>
+<body>
+    <h1>Thank you for voting</h1>
+    <a href="/logout">Logout</a>
+</body>
+</html>

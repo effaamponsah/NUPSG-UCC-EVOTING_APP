@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="../static/vstyle.css">
+    <title>{{role}} | Vote</title>
+    <script type="text/javascript">
+        function preventBack() {
+          window.history.forward();
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function() {
+          null;
+        };
+      </script>
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a class="active">NUPS-G UCC ELECTRONIC VOTING SYSTEM</a>
+        <a href="./Login/Login.html">Home</a>
+        <a href="/logout">Logout</a>
+        <br>
+    </div>
+
+    <!-- <div>
+    <img src = "images/Spotlight.jpg" style ="width:30em" alt = "banner"/>
+</div>
+<br><br> -->
+    <br><br>
+    <h2 style="text-align:center">Select your next {{ role }}</h2>
+
+    <form action="/hall" method="POST">
+
+        {% for m in range(name |length) %}
+        <div class="card">
+            <img src="../static/{{img[m]}}" alt="candidate1" style="width:100%">
+            <h1> {{ name[m] }}</h1>
+            <p class="moreinfo">Some info</p>
+            <p>Some info</p>
+            <p><input type="radio" name="like" value="{{ name[m] }}" id="input-submit"></p>
+        </div>
+        {% endfor %}
+        <input type="submit" name="like" value="Vote">
+    </form>
+
+    <br><br><br><br><br>
+
+    <div align="center">
+        <button><a href="/sec" style="color:white">Skip</a></button>
+        <button><a href="#nextvotingscreen" style="color:white">Vote</a></button>
+    </div>
+
+
+
+</body>
+
+</html>

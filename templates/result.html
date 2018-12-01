@@ -1,0 +1,142 @@
+<!--
+  In order to have more control over the charts, position its parent(div) relatively
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NUPSG-UCC | RESULT</title>
+    <script src="../static/Chart.bundle.js"></script>
+    <script type="text/javascript">
+        function preventBack() {
+          window.history.forward();
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function() {
+          null;
+        };
+      </script>
+  </head>
+
+  <body>
+
+    <div style="display:flex">
+      <div style="height: 400px; width: 400px;">
+        <canvas id="president" aria-label="hello" role="img"> </canvas>
+        <p style="margin-left: 35px;">The next president is {{c_pres}}</p>
+      </div>
+      <div style="height: 400px; width: 400px;">
+        <canvas id="sec" aria-label="hello" role="img"> </canvas>
+        <p style="margin-left: 35px;">The next Secretary is Ama</p>
+      </div>
+    </div>
+
+    <script>
+      var ctx = document.getElementById("president");
+      var myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["{{name1}}", "{{name2}}"],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [{{votes1}}, {{votes2}}],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)"
+              ],
+              borderColor: ["rgba(255,99,132,1)", "rgba(54, 162, 235, 1)"],
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true
+                },
+                gridLines: {
+                  display: false
+                }
+              }
+            ],
+            xAxes: [
+              {
+                // takes care of the thickness of the bar graph
+                barPercentage: 0.5,
+
+                //takes care of the gridlines
+                gridLines: {
+                  display: false
+                }
+              }
+            ]
+          },
+          responsive: true,
+          legend: {
+            position: "top"
+          },
+          title: {
+            display: true,
+            text: "Presidential Position"
+          }
+        }
+      });
+      var ctx = document.getElementById("sec");
+      var myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Ama", "James", "Diana"],
+          datasets: [
+            {
+              label: "# of Votes",
+              data: [12, 5, 43],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(154, 62, 235, 0.2)"
+              ],
+              borderColor: ["rgba(255,99,132,1)", "rgba(54, 162, 235, 1)", "rgba(154, 62, 235, 1)"],
+              borderWidth: 1
+            }
+          ]
+        },
+        options: {
+          scales: {
+            yAxes: [
+              {
+                ticks: {
+                  beginAtZero: true
+                },
+                gridLines: {
+                  display: false
+                }
+              }
+            ],
+            xAxes: [
+              {
+                // takes care of the thickness of the bar graph
+                barPercentage: 0.5,
+
+                //takes care of the gridlines
+                gridLines: {
+                  display: false
+                }
+              }
+            ]
+          },
+          responsive: true,
+          legend: {
+            position: "top"
+          },
+          title: {
+            display: true,
+            text: "Secretary Position"
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

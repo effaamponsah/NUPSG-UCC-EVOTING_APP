@@ -2,22 +2,23 @@
     "President":{
         "role": "President",
         "name": [
-            "KWaku Ananse",
-            "Kwame Onions"
+            "President 1",
+            "President 2"
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "q.jpg",
+            "q.jpg"
         ]
         
     },
 
+
     "Secretary":{
         "role": "Secretary",
         "name": [
-            "Abena Tomatoes",
-            "Ama Cassava",
-            "Kwame Compiler"   
+            "Sec. 1",
+            "Sec. 2",
+            "Sec. 3"   
         ],
         "images": [
             "person_1.jpg",
@@ -27,6 +28,8 @@
            
 
     },
+
+
 
     "Prayer-Secretary":{
         "role": "Prayer Secretary",
@@ -45,6 +48,7 @@
 
     },
 
+
     "Organizing-Secretary":{
         "role": "Organizing Secretary",
         "name": [
@@ -58,7 +62,8 @@
         ]
     },
 
-    "School Coordinator":{
+
+    "Schools Coordinator":{
         "role": "School's Coordinator",
         "name": [
             "Abena Tomatoes",
@@ -73,11 +78,211 @@
 
     },
 
-    "Welfare Chairperson":{
+
+    "Welfare-Chairperson":{
         "role": "Welfare Chairperson",
         "name": [
-            "Abena Tomatoes",
-            "Ama Cassava"
+            "Welfare P1",
+            "Welfare P2"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+           
+
+    },
+
+
+    "Chapel-Steward":{
+        "role": "Chapel Steward",
+        "name": [
+            "Chapel Steward1",
+            "Chapel Steward2"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+           
+
+    },
+
+
+    "Evangelism-Coordinator":{
+        "role": "Evangelism Coordinator",
+        "name": [
+            "Evg. Coordinator1",
+            "Evg. Coordinator1"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+           
+
+    },
+
+    
+    "ATL-HALL":{
+        "role": "ATL-HALL REP",
+        "name": [
+            "ATL-HALL REP1",
+            "ATL-HALL REP2"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+    },
+
+    "KNH-HALL":{
+        "role": "KNH-HALL REP",
+        "name": [
+            "KNH-HALL REP1",
+            "KNH-HALL REP2"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+           
+    },
+
+    "Valco-HALL":{
+        "role": "Valco-HALL REP",
+        "name": [
+            "Valco-HALL REP1",
+            "Valco-HALL REP2"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+           
+
+    },
+
+    "Casford-HALL":{
+        "role": "Casford-HALL REP",
+        "name": [
+            "Casford-HALL REP1",
+            "Casford-HALL REP2"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+           
+
+    },
+
+
+    "SRC-HALL":{
+        "role": "SRC-HALL REP",
+        "name": [
+            "SRC-HALL REP1",
+            "SRC-HALL REP2"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+           
+
+    },
+
+
+    "Adehye-HALL":{
+        "role": "Adehye-HALL REP",
+        "name": [
+            "Adehye-HALL REP1",
+            "Adehye-HALL REP2"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+           
+
+    },
+
+    "Oguaa-HALL":{
+        "role": "Oguaa-HALL REP",
+        "name": [
+            "Oguaa-HALL REP1",
+            "Oguaa-HALL REP2"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+           
+
+    },
+
+    "Superannuation-Hostel":{
+        "role": "Superannuation-Hostel REP",
+        "name": [
+            "Superannuation-Hostel REP1",
+            "Superannuation-Hostel REP2"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+           
+
+    },
+
+    
+    "Apewosika":{
+        "role": "Apewosika REP",
+        "name": [
+            "Apewosika REP1",
+            "Apewosika REP2"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+           
+
+    },
+
+
+    "Kwaprow":{
+        "role": "Kwaprow REP",
+        "name": [
+            "Kwaprow REP1",
+            "Kwaprow REP2"
+           
+        ],
+        "images": [
+            "person_1.jpg",
+            "person_2.jpg"
+        ]
+           
+
+    },
+
+    "Amamoma":{
+        "role": "Amamoma REP",
+        "name": [
+            "Amamoma REP1",
+            "Amamoma REP2"
            
         ],
         "images": [
@@ -87,4 +292,7 @@
            
 
     }
+
+
+
 }

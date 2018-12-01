@@ -5,6 +5,15 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="../static/vstyle.css">
     <title>{{role}} | Vote</title>
+    <script type="text/javascript">
+        function preventBack() {
+          window.history.forward();
+        }
+        setTimeout("preventBack()", 0);
+        window.onunload = function() {
+          null;
+        };
+      </script>
 </head>
 
 <body>
@@ -23,7 +32,7 @@
     <br><br>
     <h2 style="text-align:center">Select your next {{ role }}</h2>
 
-    <form action="/org" method="POST">
+    <form action="/res" method="POST">
 
         {% for m in range(name |length) %}
         <div class="card">
