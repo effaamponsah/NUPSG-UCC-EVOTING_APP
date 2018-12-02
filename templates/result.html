@@ -27,7 +27,7 @@
       </div>
       <div style="height: 400px; width: 400px;">
         <canvas id="sec" aria-label="hello" role="img"> </canvas>
-        <p style="margin-left: 35px;">The next Secretary is Ama</p>
+        <p style="margin-left: 35px;">The next Secretary is {{c_sec}}</p>
       </div>
     </div>
 
@@ -36,11 +36,27 @@
       var myChart = new Chart(ctx, {
         type: "bar",
         data: {
-          labels: ["{{name1}}", "{{name2}}"],
+          labels: [
+            
+          {% for i in pres %}
+             
+             "{{ i[0] }}", 
+
+          {% endfor %}
+          
+          ],
           datasets: [
             {
               label: "# of Votes",
-              data: [{{votes1}}, {{votes2}}],
+              data: [
+                
+              {% for i in pres %}
+             
+             {{ i[1] }}, 
+
+          {% endfor %}
+
+            ],
               backgroundColor: [
                 "rgba(255, 99, 132, 0.2)",
                 "rgba(54, 162, 235, 0.2)"
@@ -88,11 +104,24 @@
       var myChart = new Chart(ctx, {
         type: "bar",
         data: {
-          labels: ["Ama", "James", "Diana"],
+          labels: [
+            
+            {% for x in sec %}
+             
+             "{{ x[0] }}", 
+
+          {% endfor %}
+          ],
           datasets: [
             {
               label: "# of Votes",
-              data: [12, 5, 43],
+              data: [
+              {% for x in sec %}
+             
+                  {{ x[1] }}, 
+
+              {% endfor %}
+              ],
               backgroundColor: [
                 "rgba(255, 99, 132, 0.2)",
                 "rgba(54, 162, 235, 0.2)",

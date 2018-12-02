@@ -613,19 +613,40 @@ def result():
     result = sql.connect('polls.db')
     f = result.cursor()
     f.execute("SELECT * from president")
-    ret = f.fetchall()
+    pres = f.fetchall()
+    # print(ret)
+    ################################################
+
     # try to loop through for code optimization
-    name1 = ret[0][0]
-    votes1 = ret[0][1]
-    name2 = ret[1][0]
-    votes2 = ret[1][1]
-    if votes1 > votes2:
-        c_pres = name1
-    elif votes1 == votes2:
+    # name1 = ret[0][0]
+    # votes1 = ret[0][1]
+    # name2 = ret[1][0]
+    # votes2 = ret[1][1]
+    # optimization successfully done in template :)
+    # it wasnt done the same day thi. just in case i happen to look through
+    # these codes some time to come
+
+    ##############################################
+    if pres[0][1] > pres[1][1]:
+        c_pres = pres[0][0]
+    elif pres[0][1] == pres[1][1]:
         c_pres = 'A tie'
     else:
-        c_pres = name2
-    return render_template('result.html', name1=name1, name2=name2, votes1=votes1, votes2=votes2, c_pres=c_pres, ret=ret)
+        c_pres = pres[1][0]
+
+    f.execute("SELECT * from secretary")
+    sec = f.fetchall()
+    if sec[0][1] > sec[1][1]:
+        c_sec = sec[0][0]
+    elif sec[0][1] == sec[1][1]:
+        c_sec = 'A tie'
+    else:
+        c_sec = sec[1][0]
+    
+    return render_template('result.html',c_pres=c_pres, pres=pres, c_sec=c_sec, sec=sec)
+
+
+
 
 
 @app.errorhandler(404)
@@ -634,6 +655,6 @@ def page_not_found(error):
 
 
 if __name__ == '__main__':
-    app.secret_key = b'haha... its a generated key' # i had an error when i was running the app i guess we can use another secured method
+    app.secret_key = b'haha... its a generated key' # i had an error when i was running the app i guess we can use another secured method like a random number generator or something
     # images = Images(app)
     app.run(debug=True, port=8000)
