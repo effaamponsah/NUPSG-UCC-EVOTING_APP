@@ -1,13 +1,17 @@
 <!-- <p>This is the admin pannel</p> -->
 
+<link rel="stylesheet" href="../static/vstyle.css" />
+<div class="admin-container">
 <form action="{{ url_for('admin')}}" method="POST">
+    <h1>Admin - Member Registration Page</h1>
     <h4>Name</h4>
-    <input type="text" name="name" placeholder="enter your name">
+    <input type="text" name="name" placeholder="enter your name" required>
     <h4>Students_Id</h4>
-    <input type="text" name="std_id" placeholder="enter your students">
+    <input type="text" name="std_id" placeholder="enter your students id" required>
     <h4>Hall of Affiliation</h4>
     <!-- <input type="text" name="hall_of_affiliation" placeholder="enter your Hall"> -->
-    <select name="hall_of_affiliation" aria-placeholder="Select your hall">
+    <select name="hall_of_affiliation" id="hall_of_affiliation" aria-placeholder="Select your hall">
+        <option value=""></option>
         <option value="Adehye">Adehye</option>
         <option value="Oguaa">Oguaa</option>
         <option value="ATL">ATL</option>
@@ -18,7 +22,8 @@
         <option value="SUPERANNUATION">Superannuation</option>
     </select>
     <h4>Current Residence</h4>
-    <select name="res" aria-placeholder="Select your residence">
+    <select name="res" id="hall_of_affiliation" aria-placeholder="Select your residence">
+        <option value=""></option>
         <option value="Adehye">Adehye</option>
         <option value="Oguaa">Oguaa</option>
         <option value="ATL">ATL</option>
@@ -36,15 +41,45 @@
 
     <h4>Wing</h4>
     <!-- <input type="text" name="wing" placeholder="enter your students"> -->
-    <select name="wing" aria-placeholder="Select your Wing">
-        <option value="Organizers">Organizers</option>
+    <select name="wing" id="hall_of_affiliation" aria-placeholder="Select your Wing">
+        <option value=""></option>
+        <option value="None">No wing</option>
+        <option value="Organizers">Organizers and Ushering</option>
         <option value="Evangelism">Evangelism</option>
-        <option value="Bible_Stdy">Bible Study And Prayer Group</option>
-        <option value="Sch.Cord">Schools Coordinator</option>
+        <option value="Bible_Stdy">Bible Studies</option>
+        <option value="Sch.Cord">Coordinators</option>
         <option value="Jewels">Jewels</option>
-        <option value="Welfare">Welfare</option>
+        <option value="Choir">Choir</option>
+        <option value="Golden_vessels">Golden Vessels</option>
+        <option value="Prayer_warriors">Prayer Warriors</option>
+        <option value="Singing_band">Singing_band</option>
+        <option value="Children_ministry">Children Ministry</option>
+        <!-- <option value="Capable_women">Capable Women</option> -->
+        <option value="Vessels">Vessels of Praise</option>
     </select>
     <br>
-    <input type="submit" value="Add">
 
+    <h4>Second Wing if any</h4>
+    
+    <select name="wing2" id="hall_of_affiliation" aria-placeholder="Select your Wing">
+            <option value=""></option>
+            <option value="None">No wing</option>
+            <option value="Organizers">Organizers and Ushering</option>
+            <option value="Evangelism">Evangelism</option>
+            <option value="Bible_Stdy">Bible Studies</option>
+            <option value="Sch.Cord">Coordinator</option>
+            <option value="Jewels">Jewels</option>
+            <option value="Choir">Choir</option>
+            <option value="Golden_vessels">Golden Vessels</option>
+            <option value="Prayer_warriors">Prayer Warriors</option>
+            <option value="Singing_band">Singing_band</option>
+            <option value="Children_ministry">Children Ministry</option>
+            <option value="Capable_women">Capable Women</option>
+            <option value="Vessels">Vessels of Praise</option>
+    </select>
+
+
+    <br><br><br>
+    <button type="submit">Register </button>
 </form>
+</div>

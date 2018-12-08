@@ -2,12 +2,14 @@
     "President":{
         "role": "President",
         "name": [
-            "President 1",
-            "President 2"
+            "Evans D. Ankrah",
+            "Edward Larbi"
+            
         ],
         "images": [
-            "q.jpg",
-            "q.jpg"
+            "ASST.-PRAYER-SECRETARY---EVANS-DWOMOH-ANKRAH-(0240416825).gif",
+            "KNH-REP-I---EDWARD-LARBI-(0247744692-0260757174).gif"
+           
         ]
         
     },
@@ -16,14 +18,14 @@
     "Secretary":{
         "role": "Secretary",
         "name": [
-            "Sec. 1",
-            "Sec. 2",
-            "Sec. 3"   
+            "Rosemond Asmah",
+            "Gifty O. Gyan"
+            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg",
-            "person_1.jpg"
+            "OGUAA-REP-II---ROSEMOND-ASMAH-(0578085312).jpg",
+            "Gifty Gyan.png"
+            
         ]
            
 
@@ -34,15 +36,15 @@
     "Prayer-Secretary":{
         "role": "Prayer Secretary",
         "name": [
-            "Prayer Sec 1 ",
-            "Prayer Sec 2 ",
-            "Prayer Sec 3 "
+            "Enoch T. Alorzokey",
+            "Edwin O. Verner"
+          
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg",
-            "person_1.jpg"
+            "Enoch Tetteh Alorzokey- Prayer Secretary.png",
+            "Edwin Obeng Verner- Prayer Secretary.png"
+            
         ]
            
 
@@ -52,13 +54,13 @@
     "Organizing-Secretary":{
         "role": "Organizing Secretary",
         "name": [
-            "Organizer 1",
-            "Organizer 2"
+            "Emmanuel D. Sinaman",
+            "Daniel K. Amoako"
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "Dadzie Sinaman.png",
+            "Daniel Kwadwo Amoako- Organizer.png"
         ]
     },
 
@@ -66,13 +68,13 @@
     "Schools Coordinator":{
         "role": "School's Coordinator",
         "name": [
-            "Abena Tomatoes",
-            "Ama Cassava"
+            "Veronica Abban",
+            "Winifred Abakah"
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "ASST.-SCHOOLS'-COORDINATOR---VERONICA-ABBAN-(0576751785).gif",
+            "Winifred Abakah- Schools Coordinator.png"
         ]
            
 
@@ -82,13 +84,15 @@
     "Welfare-Chairperson":{
         "role": "Welfare Chairperson",
         "name": [
-            "Welfare P1",
-            "Welfare P2"
+            "Esther Tawiah",
+            "Abigail Tackie"
+           
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "Esther.png",
+            "Abigail Tackie- Valco rep.png"
+            
         ]
            
 
@@ -98,13 +102,13 @@
     "Chapel-Steward":{
         "role": "Chapel Steward",
         "name": [
-            "Chapel Steward1",
-            "Chapel Steward2"
+            "Mercy Bempong",
+            "Afia B. Birago"
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "Mercy Benpong.png",
+            "ASST.-CHAPEL-STEWARD---EFIA-BIRAGO-BAAFI-(0245387226).jpg"
         ]
            
 
@@ -114,13 +118,13 @@
     "Evangelism-Coordinator":{
         "role": "Evangelism Coordinator",
         "name": [
-            "Evg. Coordinator1",
-            "Evg. Coordinator1"
+            "Gifty Asiamah"
+            
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "Gifty Assiamah - Evangelism Coordinator.png"
+            
         ]
            
 
@@ -130,26 +134,26 @@
     "ATL-HALL":{
         "role": "ATL-HALL REP",
         "name": [
-            "ATL-HALL REP1",
-            "ATL-HALL REP2"
+            "Nana Adjei",
+            "Michael A. Sarkodie"
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "q.jpg",
+            "q.jpg"
         ]
     },
 
     "KNH-HALL":{
         "role": "KNH-HALL REP",
         "name": [
-            "KNH-HALL REP1",
-            "KNH-HALL REP2"
+            "Freda Odamtten",
+            "Millicent Selassie"
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "q.jpg",
+            "q.jpg"
         ]
            
     },
@@ -157,13 +161,15 @@
     "Valco-HALL":{
         "role": "Valco-HALL REP",
         "name": [
-            "Valco-HALL REP1",
-            "Valco-HALL REP2"
+            "Adelaide Oppong",
+            "Sampson Nkansah"
+            
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "q.jpg",
+            "VALCO-REP-II---SAMPSON-NKANSAH-(0548560539).gif"
+           
         ]
            
 
@@ -172,13 +178,13 @@
     "Casford-HALL":{
         "role": "Casford-HALL REP",
         "name": [
-            "Casford-HALL REP1",
-            "Casford-HALL REP2"
+            "Prince F. Armah",
+            "Samuel Takyi"
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "q.jpg",
+            "q.jpg"
         ]
            
 
@@ -188,13 +194,13 @@
     "SRC-HALL":{
         "role": "SRC-HALL REP",
         "name": [
-            "SRC-HALL REP1",
-            "SRC-HALL REP2"
+            "Jennifer N. Tetteh",
+            "Racheal A. Akosah"
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "SRC-REP-I---JENNIFER-NAKIE-TETTEH-(0247230238).jpg",
+            "Rachael Adoma Akosah - SRC rep.png"
         ]
            
 
@@ -204,13 +210,13 @@
     "Adehye-HALL":{
         "role": "Adehye-HALL REP",
         "name": [
-            "Adehye-HALL REP1",
-            "Adehye-HALL REP2"
+            "Ruby Salifu"
+            
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "Ruby Salifu- Adehye Rep.png"
+            
         ]
            
 
@@ -219,13 +225,13 @@
     "Oguaa-HALL":{
         "role": "Oguaa-HALL REP",
         "name": [
-            "Oguaa-HALL REP1",
-            "Oguaa-HALL REP2"
+            "Foster Segbe",
+            "Stella Owusu"
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "q.jpg",
+            "q.jpg"
         ]
            
 
@@ -234,13 +240,13 @@
     "Superannuation-Hostel":{
         "role": "Superannuation-Hostel REP",
         "name": [
-            "Superannuation-Hostel REP1",
-            "Superannuation-Hostel REP2"
+            "Benjamin O. Antwi Jnr. ",
+            "Theophilus O. Banahene"
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "q.jpg",
+            "q.jpg"
         ]
            
 
@@ -250,13 +256,13 @@
     "Apewosika":{
         "role": "Apewosika REP",
         "name": [
-            "Apewosika REP1",
-            "Apewosika REP2"
+            "Mary K. Ashai",
+            "Prosper E. Atitse"
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "q.jpg",
+            "q.jpg"
         ]
            
 
@@ -266,13 +272,13 @@
     "Kwaprow":{
         "role": "Kwaprow REP",
         "name": [
-            "Kwaprow REP1",
-            "Kwaprow REP2"
+            "Prince Dokyi",
+            "Esther O. Acheampong"
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "q.jpg",
+            "Esther Owusu Acheampong- Kwaprow rep.png"
         ]
            
 
@@ -281,13 +287,30 @@
     "Amamoma":{
         "role": "Amamoma REP",
         "name": [
-            "Amamoma REP1",
-            "Amamoma REP2"
+            "Prince O. Agyeman",
+            "Rosemary Owusu"
            
         ],
         "images": [
-            "person_1.jpg",
-            "person_2.jpg"
+            "q.jpg",
+            "AMAMOMA-REP-II---ROSEMARY-OFOSUWAA-(0549599860).gif"
+        ]
+           
+
+    },
+
+    "Choir-President":{
+        "role": "Choir President",
+        "name": [
+            "Alberta A. Affum",
+            "Richard O. Boateng",
+            "Grace A. Aryeequaye"
+           
+        ],
+        "images": [
+            "q.jpg",
+            "AMAMOMA-REP-II---ROSEMARY-OFOSUWAA-(0549599860).gif",
+            "AMAMOMA-REP-II---ROSEMARY-OFOSUWAA-(0549599860).gif"
         ]
            
 

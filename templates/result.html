@@ -37,23 +37,16 @@
         type: "bar",
         data: {
           labels: [
-            
           {% for i in pres %}
-             
              "{{ i[0] }}", 
-
           {% endfor %}
-          
           ],
           datasets: [
             {
               label: "# of Votes",
               data: [
-                
               {% for i in pres %}
-             
              {{ i[1] }}, 
-
           {% endfor %}
 
             ],

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  width:50%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+ background-color: #fff;
+}
+table#t01 th {
+  background-color: black;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<h2>Presidents Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in pres %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ s }}</td>
+    </tr>
+    
+    
+</table>
+
+<p>The current president is  {{c_pres}}</p>
+
+
+
+
+
+<br><br>
+<h2>Secretary Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in sec %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ a }}</td>
+    </tr>
+
+</table>
+<p>The current president is  {{c_sec}}</p>
+
+
+
+
+<br><br>
+<h2>Prayer Secretary Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in pry %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ r }}</td>
+    </tr>
+
+</table>
+
+
+<br><br>
+<h2>Chapel Steward Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in cs %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ n }}</td>
+    </tr>
+
+</table>
+
+
+<br><br>
+<h2>Choir President Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in ch %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ o }}</td>
+    </tr>
+
+</table>
+
+<br><br>
+<h2>Evangelism Cordinator Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in env %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ v }}</td>
+    </tr>
+
+</table>
+
+<br><br>
+<h2>Organizing Secretary Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in org %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ q }}</td>
+    </tr>
+
+</table>
+
+<br><br>
+<h2>Schools Cordinator Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in sc %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ t }}</td>
+    </tr>
+
+</table>
+
+<br><br>
+<h2>Welfare ChairPerson Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in wel %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ w }}</td>
+    </tr>
+
+</table>
+
+
+<br><br>
+<h2>Amamoma Rep Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in ama %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ e }}</td>
+    </tr>
+
+</table>
+
+
+<br><br>
+<h2>Apewosika Rep Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in ape %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ g }}</td>
+    </tr>
+
+</table>
+
+
+<br><br>
+<h2>Kwaprow Rep Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in kwa %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ i }}</td>
+    </tr>
+
+</table>
+
+
+
+
+<br><br>
+<h2>Valco Hall Rep Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in valc %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ m }}</td>
+    </tr>
+
+</table>
+
+
+<br><br>
+<h2>Superannuation Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in sup %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ l }}</td>
+    </tr>
+
+</table>
+
+
+<br><br>
+<h2>SRC Hall Rep Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in src %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ k }}</td>
+    </tr>
+
+</table>
+
+
+<br><br>
+<h2>Oguaa Hall Rep Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in Oguaa %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ j }}</td>
+    </tr>
+
+</table>
+
+<br><br>
+<h2>Adehye Hall Rep Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in adh %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ z }}</td>
+    </tr>
+
+</table>
+
+
+<br><br>
+<h2>Casford Hall Rep Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in Casford %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ h }}</td>
+    </tr>
+
+</table>
+
+
+<br><br>
+<h2>KNH Hall Rep Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in knh %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ d }}</td>
+    </tr>
+
+</table>
+
+
+<br><br>
+<h2>ATL Hall Rep Result</h2>
+<table id="t01">
+  <tr>
+    <th>Name</th>
+    <th>Votes</th> 
+  </tr>
+
+  {% for i in atl %}
+      <tr>
+          <td>
+
+              {{ i[0] }}
+            </td>
+          <td>
+
+              {{ i[1] }}
+            </td>
+
+    </tr>
+  {% endfor %}
+    <tr>
+        <td>Total number of votes</td>
+        <td>{{ b }}</td>
+    </tr>
+
+</table>
+
+</body>
+</html>

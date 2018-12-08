@@ -15,18 +15,20 @@
 </head>
 
 <body>
-    <h1>NUPS-G UCC ELECIONS</h1>
+    <h1>NUPS-G UCC ELECTIONS</h1>
     <h5><i>Please enter your Registration Number below to login</i></h5>
     <form action="/login" method="POST" class="cf" onsubmit="validate(this)">
         <div class="half left cf">
+            
                 {% with m = get_flashed_messages() %}
                 {% if m %}
-                    {% for message in m %}
-                    <!-- the next line is the error message -->
-                    <h3>{{ message }}</h3> 
-                    {% endfor %}
+                {% for message in m %}
+                <!-- the next line is the error message -->
+                <h1>{{ message }}</h1>
+                {% endfor %}
                 {% endif %}
                 {% endwith %}
+        
             <input type="text" name="std_id" placeholder="Enter your index number" id="input-name">
             <input type="submit" value="LOGIN" id="input-submit">
         </div>

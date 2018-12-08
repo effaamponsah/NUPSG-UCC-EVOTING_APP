@@ -16,22 +16,32 @@ html, body {
   /* background: #fba1f1f1; */
   background-position: center;
   background-size: 100em; 
-  font-family: 'Merriweather', sans-serif;
+  font-family: 'Roboto', sans-serif;
   padding: 1em;
   margin: 80px auto;
-  background-color: rgb(26, 112, 224);
+  background-image: url(../static/login\ back.png);
+  background-color: rgb(3, 77, 173);
 }
 
 h1 {
   text-align: center;
-  color: #a8a8a8;
+  color: #ffffff;
+  font-family: 'Montserrat thin'
+
+}
+
+
+h2 {
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Montserrat thin'
 
 }
 
 h5 {
   text-align: center;
-  color: #050505;
-  font-family: 'Merriweather', sans-serif ;
+  color: #ffffff;
+  font-family: 'Montserrat thin';
 }
 
 form {
@@ -51,7 +61,7 @@ form input, form textarea {
   width: 100%;
   margin-top: 1em;
   margin-left: 17em;
-  font-family: 'Merriweather', sans-serif;
+  font-family: 'Roboto', sans-serif;
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);

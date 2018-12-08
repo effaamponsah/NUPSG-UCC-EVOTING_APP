@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="../static/vstyle.css" />
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Thanks for voting</title>
     <script type="text/javascript">
+      let path = document.querySelector(".tick");
+      let length = path.getTotalLength();
+
+      console.log(length); 
+
         function preventBack() {
           window.history.forward();
         }
@@ -16,7 +23,15 @@
       </script>
 </head>
 <body>
-    <h1>Thank you for voting</h1>
-    <a href="/logout">Logout</a>
+  <div class="svg-container" style="background-color:black">    
+      <svg class="ft-green-tick" xmlns="http://www.w3.org/2000/svg" height="100" width="100" viewBox="0 0 48 48" aria-hidden="true">
+          <circle class="circle" fill="#5bb543" cx="24" cy="24" r="22"/>
+          <path class="tick" fill="none" stroke="#FFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M14 27l5.917 4.917L34 17"/>
+      </svg>
+      <h1 style="color:rgb(255, 255, 255)">Success!</h1>
+      <h1 style="color:rgb(255, 255, 255)">Thank You for voting</h1>
+      <button><a href="/logout">Click to Logout</a></button>
+  </div>
+  </head>
 </body>
 </html>

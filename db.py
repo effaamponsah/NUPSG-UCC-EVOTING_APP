@@ -15,12 +15,14 @@ class Students(Base):
     hall = Column('hall_of_affiliation', String)
     res = Column('current_residence', String)
     wing = Column('wing', String)
+    wing2 = Column('wing2', String)
 
-    def __init__(self, name, res, std_id, hall, wing):
+    def __init__(self, name, res, std_id, hall, wing, wing2):
         self.name = name
         self.std_id = std_id
         self.hall = hall
         self.wing = wing
+        self.wing2 = wing2
         self.res = res
        
 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    -->
+    <link rel="stylesheet" href="../static/vstyle.css" />
+    <title>{{ role }} | Vote</title>
+    <script type="text/javascript">
+      function preventBack() {
+        window.history.forward();
+      }
+      setTimeout("preventBack()", 0);
+      window.onunload = function() {
+        null;
+      };
+    </script>
+  </head>
+
+  <body>
+    <div class="topnav">
+      <h3 style="color:white";>NUPS-G UCC ELECTRONIC VOTING SYSTEM</h3>
+     <a href="/logout">Logout</a> <br />
+    </div>
+
+    <!--
+      <div>
+          <img src = "images/Spotlight.jpg" style ="width:30em" alt = "banner"/>
+      </div>
+      <br><br>
+    -->
+    <br /><br /><br /><br /><br /><br />
+    <h1 style="text-align:center">Select your next {{ role }}</h1>
+    <br /><br /><br />
+
+    {% if (name|length) == 2%}
+    <div style="margin-left: auto; margin-right: auto; width: 900px;">
+    {% endif %}
+   
+      <form action="/choir" method="POST" onsubmit="validate(this)">
+        {% for m in range(name |length) %}
+        <div class="card">
+          <img src="../static/{{img[m]}}" alt="candidate1" style="width:100%" />
+          <h1 class="name">{{ name[m] }}</h1>
+          <p class="moreinfo">Click inside the circle to select</p>
+          <p class="moreinfo">And click vote to cast vote</p>
+          <div class="inputGroup">
+            <input
+              type="radio"
+              name="like"
+              value="{{ name[m] }}"
+              id="{{ name[m] }}"
+              required
+            />
+            <label for="{{ name[m] }}" style="text-align:center">Selected</label>
+          </div>
+        </div>
+        
+        {% endfor %} 
+        
+        <p class="come-down">
+        <button input type="submit" name="like">Vote</button>
+        <!-- <button><a href="/p_sec">Skip</a></button>  -->
+        {% if wing_name2 == 'Organizers'%}
+        <button><a href="/cs">Skip</a></button> 
+        {% elif wing_name2 == 'Sch.Cord' %}
+        <button><a href="/sc">Skip</a></button> 
+        {% elif wing_name2 == 'Evangelism' %}
+        <button><a href="/evang">Skip</a></button> 
+        {% else %}
+        <button><a href="/hall">Skip</a></button> 
+        {% endif %} 
+        </p>
+      <!-- </div> -->
+      </form>
+    </div>
+      <br /><br /><br /><br />
+  </body>
+</html>
