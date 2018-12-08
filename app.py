@@ -34,8 +34,9 @@ def index():
 @app.route('/login', methods=['POST'])
 def login():
     has_voted = False
-    STUDENTS_ID = str(request.form['std_id'])
+    STUDENTS_ID = str(request.form['std_id']).upper()
 
+    print(STUDENTS_ID)
     query = dennis.query(Students).filter(Students.std_id.in_([STUDENTS_ID]))
     result = query.first()
     # if request.form['std_id'] == 'PS/CSC/15/0000':    #hard coded data
@@ -53,21 +54,21 @@ def login():
         w = y[0]
         global wing_name
         wing_name = w
-        sleep(1)
+        sleep(0.2)
 
         c.execute("SELECT hall_of_affiliation from students WHERE index_no=:k", {"k": STUDENTS_ID})
         y = c.fetchone()
         w = y[0]
         global hall
         hall = w
-        sleep(1)
+        sleep(0.2)
 
         c.execute("SELECT current_residence from students WHERE index_no=:k", {"k": STUDENTS_ID})
         y = c.fetchone()
         w = y[0]
         global c_residence
         c_residence = w
-        sleep(1)
+        sleep(0.2)
 
         c.execute("SELECT wing2 from students WHERE index_no=:k", {"k": STUDENTS_ID})
         y = c.fetchone()
@@ -105,13 +106,14 @@ def login():
 @app.route('/admin', methods=['GET','POST'])  #i thought it would be POST only but when you are trying in the browser, you are getting :)
 def admin():
     if request.method == 'POST':
+        ID = str(request.form['std_id']).upper()
         if not request.form['name'] or not request.form['std_id']:
             print('Massa fill in the forms')
         else:
             data = Students(
                         request.form['name'],
                         request.form['res'],
-                        request.form['std_id'],
+                        ID,
                         request.form['hall_of_affiliation'],
                         request.form['wing'],
                         request.form['wing2'],
