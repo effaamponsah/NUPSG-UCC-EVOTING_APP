@@ -58,7 +58,12 @@
         
         {% endfor %} 
         
-        <p class="come-down">
+        <!-- <p class="come-down"> -->
+            {% if (name|length) == 2%}
+            <p class="come-down">
+            {% else %}
+            <p class="come-down3">
+              {% endif %}
         <button input type="submit" name="like">Vote</button>
         <!-- <button><a href="/p_sec">Skip</a></button>  -->
         {% if wing_name2 == 'Organizers'%}

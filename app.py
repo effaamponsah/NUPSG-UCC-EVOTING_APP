@@ -1,10 +1,13 @@
-from flask import Flask, render_template, session, request, flash, url_for, get_flashed_messages, redirect, make_response
+from flask import Flask, render_template, session, request, flash, url_for, get_flashed_messages, redirect, make_response, g
 from db import *
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import json, os
 from error import msg
 from time import sleep
+
+from views.choir import *
+from views.admin import admin_view
 
 import sqlite3 as sql
 
@@ -36,7 +39,6 @@ def login():
     has_voted = False
     STUDENTS_ID = str(request.form['std_id']).upper()
 
-    print(STUDENTS_ID)
     query = dennis.query(Students).filter(Students.std_id.in_([STUDENTS_ID]))
     result = query.first()
     # if request.form['std_id'] == 'PS/CSC/15/0000':    #hard coded data
@@ -54,21 +56,21 @@ def login():
         w = y[0]
         global wing_name
         wing_name = w
-        sleep(0.2)
+        #sleep(0.2)
 
         c.execute("SELECT hall_of_affiliation from students WHERE index_no=:k", {"k": STUDENTS_ID})
         y = c.fetchone()
         w = y[0]
         global hall
         hall = w
-        sleep(0.2)
+        #sleep(0.2)
 
         c.execute("SELECT current_residence from students WHERE index_no=:k", {"k": STUDENTS_ID})
         y = c.fetchone()
         w = y[0]
         global c_residence
         c_residence = w
-        sleep(0.2)
+        #sleep(0.2)
 
         c.execute("SELECT wing2 from students WHERE index_no=:k", {"k": STUDENTS_ID})
         y = c.fetchone()
@@ -78,14 +80,15 @@ def login():
 
         #####################################
         if new_stamp:
-            print('Has voted as ', new_stamp)
+            #print('Has voted as ', new_stamp)
             return redirect(url_for('error'))
         else:
-            print("Wing name",wing_name)
-            print("Second wing name",wing_name2)
-            print("Hall",hall)
-            print("Residence",c_residence)
-            print('Hasnt voted')
+            #print("Wing name",wing_name)
+            #print("Second wing name",wing_name2)
+            #print("Hall",hall)
+            #print("Residence",c_residence)
+            #print('Hasnt voted')
+            pass
 
     else:
         flash('Please check wether you entered the correct index number')
@@ -98,34 +101,14 @@ def login():
 
     if has_voted:
         new_stamp = 'Dennis'
-        print('set cookie')
+        #print('set cookie')
         resp.set_cookie(STUDENTS_ID, new_stamp)
     return resp
 
 
 @app.route('/admin', methods=['GET','POST'])  #i thought it would be POST only but when you are trying in the browser, you are getting :)
 def admin():
-    if request.method == 'POST':
-        ID = str(request.form['std_id']).upper()
-        if not request.form['name'] or not request.form['std_id']:
-            print('Massa fill in the forms')
-        else:
-            data = Students(
-                        request.form['name'],
-                        request.form['res'],
-                        ID,
-                        request.form['hall_of_affiliation'],
-                        request.form['wing'],
-                        request.form['wing2'],
-                    )
-            dennis.add(data)
-            dennis.commit()
-            print('Data Successfully added')
-            return  '''
-                <h2>Data Successfully added</h2>
-                <a href='/admin'>Go back</a>
-            '''
-    return render_template('/admin.html')
+    return admin_view()
        
 
 @app.route('/logout')
@@ -147,11 +130,12 @@ def vote():
     if request.method == 'POST':
         vote = request.form['like']   #do a check on the when the user selects none
         if vote == '':
-            print('User never choose anyone to vote for')
+            #print('User never choose anyone to vote for')
+            pass
             
         v.execute("UPDATE president SET votes =votes+?  WHERE name= ?", (1,vote,))
         pres_vt.commit()
-        print('Voted for', vote)
+        #print('Voted for', vote)
         return redirect(url_for('sec'))   #this is where the logic for solving the hall and wings problem will be about. Here we can use a switch case or a simple if-else
     return render_template('pres.html', role=role, img=img, name=name)
 
@@ -172,7 +156,7 @@ def sec():
          vote = request.form['like']
          v.execute("UPDATE secretary SET votes =votes+?  WHERE name= ?", (1,vote,))
          pres_vt.commit()
-         print('Voted for', vote)
+         #print('Voted for', vote)
          return redirect(url_for('org'))  
     return render_template('sec.html', role= role, name=name, img=img)
 
@@ -191,7 +175,7 @@ def org():
          vote = request.form['like']
          v.execute("UPDATE organizing_sec SET votes =votes+?  WHERE name= ?", (1,vote,))
          pres_vt.commit()
-         print('Voted for', vote)
+         #print('Voted for', vote)
          return redirect(url_for('welfare'))  
     return render_template('org.html', role= role, name=name, img=img)
 
@@ -210,7 +194,7 @@ def welfare():
          vote = request.form['like']
          v.execute("UPDATE welfare_chair SET votes =votes+?  WHERE name= ?", (1,vote,))
          pres_vt.commit()
-         print('Voted for', vote)
+         #print('Voted for', vote)
          return redirect(url_for('p_sec'))  
     return render_template('welfare.html', role= role, name=name, img=img)
 
@@ -229,7 +213,7 @@ def p_sec():
          vote = request.form['like']
          v.execute("UPDATE prayer_sec SET votes =votes+?  WHERE name= ?", (1,vote,))
          pres_vt.commit()
-         print('Voted for', vote)
+         #print('Voted for', vote)
 
          ##################################
          #this is where the breakthrough is
@@ -262,7 +246,7 @@ def cs():
         vote = request.form['like']
         v.execute("UPDATE chapel_steward SET votes =votes+?  WHERE name= ?", (1,vote,))
         pres_vt.commit()
-        print('Voted for', vote)
+        #print('Voted for', vote)
 
         ############################
         if wing_name2 == 'Sch.Cord':
@@ -292,7 +276,7 @@ def sc():
          vote = request.form['like']
          v.execute("UPDATE sch_cord SET votes =votes+?  WHERE name= ?", (1,vote,))
          pres_vt.commit()
-         print('Voted for', vote)
+         #print('Voted for', vote)
          
          
          ########################################
@@ -324,7 +308,7 @@ def evang():
          vote = request.form['like']
          v.execute("UPDATE evang_cord SET votes =votes+?  WHERE name= ?", (1,vote,))
          pres_vt.commit()
-         print('Voted for', vote)
+         #print('Voted for', vote)
          
          ######################
          if wing_name2 == 'Organizers':
@@ -344,33 +328,7 @@ def evang():
 
 @app.route('/choir', methods=['GET', 'POST'])
 def choir():
-    pres_vt = sql.connect('polls.db')
-    v = pres_vt.cursor()
-    with open(os.path.join('./seed/data.json')) as file:
-        data = json.load(file)
-        role = data['Choir-President']['role']
-        name = data['Choir-President']['name']
-        img = data['Choir-President']['images']
-
-    if request.method == 'POST':
-         vote = request.form['like']
-         v.execute("UPDATE choir_president SET votes =votes+?  WHERE name= ?", (1,vote,))
-         pres_vt.commit()
-         print('Voted for', vote)
-         
-         ######################
-         if wing_name2 == 'Organizers':
-             return redirect(url_for('cs'))
-         elif wing_name2 == 'Sch.Cord':
-             return redirect(url_for('sc')) 
-         elif wing_name2 == 'Evangelism':
-             return redirect(url_for('evang'))
-         else:
-             return redirect(url_for('hall_name'))
-
-         ######################
-         return redirect(url_for('hall_name'))  
-    return render_template('choir.html', role= role, name=name, img=img, wing_name2=wing_name2)
+    return choir_view()
 
 
 @app.route('/hall', methods=['GET', 'POST'])
@@ -379,8 +337,8 @@ def hall_name():
     v = pres_vt.cursor()
     global hall
     global c_residence
-    print('Hall', hall)
-    print('Current', c_residence)
+    #print('Hall', hall)
+    #print('Current', c_residence)
     # if hall and c_residence == 'ATL':
     if hall == 'ATL':  
         with open(os.path.join('./seed/data.json')) as file:
@@ -392,7 +350,7 @@ def hall_name():
             vote = request.form['like']
             v.execute("UPDATE ATL_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
             pres_vt.commit()
-            print('Voted for', vote)
+            #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
             else:
@@ -409,7 +367,7 @@ def hall_name():
             vote = request.form['like']
             v.execute("UPDATE KNH_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
             pres_vt.commit()
-            print('Voted for', vote)
+            #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
             else:
@@ -426,7 +384,7 @@ def hall_name():
             vote = request.form['like']
             v.execute("UPDATE Valco_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
             pres_vt.commit()
-            print('Voted for', vote)
+            #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
             else:
@@ -443,7 +401,7 @@ def hall_name():
             vote = request.form['like']
             v.execute("UPDATE Oguaa_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
             pres_vt.commit()
-            print('Voted for', vote)
+            #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
             else:
@@ -460,7 +418,7 @@ def hall_name():
             vote = request.form['like']
             v.execute("UPDATE Casford_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
             pres_vt.commit()
-            print('Voted for', vote)
+            #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
             else:
@@ -477,7 +435,7 @@ def hall_name():
             vote = request.form['like']
             v.execute("UPDATE SRC_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
             pres_vt.commit()
-            print('Voted for', vote)
+            #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
             else:
@@ -495,7 +453,7 @@ def hall_name():
             vote = request.form['like']
             v.execute("UPDATE SRC_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
             pres_vt.commit()
-            print('Voted for', vote)
+            #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
             else:
@@ -513,7 +471,7 @@ def hall_name():
             vote = request.form['like']
             v.execute("UPDATE Adehye_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
             pres_vt.commit()
-            print('Voted for', vote)
+            ##print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
             else:
@@ -531,7 +489,7 @@ def hall_name():
             vote = request.form['like']
             v.execute("UPDATE Superannuation SET votes =votes+?  WHERE name= ?", (1,vote,))
             pres_vt.commit()
-            print('Voted for', vote)
+            #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
             else:
@@ -557,7 +515,7 @@ def res_():
              vote = request.form['like']
              v.execute("UPDATE KNH_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
              pres_vt.commit()
-             print('Voted for', vote)
+             #print('Voted for', vote)
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
         
@@ -571,7 +529,7 @@ def res_():
              vote = request.form['like']
              v.execute("UPDATE ATL_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
              pres_vt.commit()
-             print('Voted for', vote)
+             #print('Voted for', vote)
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
         # return('You wil vote for ATL')
@@ -586,7 +544,7 @@ def res_():
              vote = request.form['like']
              v.execute("UPDATE Oguaa_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
              pres_vt.commit()
-             print('Voted for', vote)
+             #print('Voted for', vote)
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
 
@@ -600,7 +558,7 @@ def res_():
              vote = request.form['like']
              v.execute("UPDATE Casford_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
              pres_vt.commit()
-             print('Voted for', vote)
+             #print('Voted for', vote)
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
 
@@ -614,7 +572,7 @@ def res_():
              vote = request.form['like']
              v.execute("UPDATE Valco_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
              pres_vt.commit()
-             print('Voted for', vote)
+             #print('Voted for', vote)
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
 
@@ -628,7 +586,7 @@ def res_():
              vote = request.form['like']
              v.execute("UPDATE SRC_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
              pres_vt.commit()
-             print('Voted for', vote)
+             #print('Voted for', vote)
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
 
@@ -642,7 +600,7 @@ def res_():
              vote = request.form['like']
              v.execute("UPDATE SRC_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
              pres_vt.commit()
-             print('Voted for', vote)
+             #print('Voted for', vote)
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
 
@@ -656,7 +614,7 @@ def res_():
              vote = request.form['like']
              v.execute("UPDATE Adehye_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
              pres_vt.commit()
-             print('Voted for', vote)
+             #print('Voted for', vote)
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
 
@@ -670,7 +628,7 @@ def res_():
              vote = request.form['like']
              v.execute("UPDATE Superannuation SET votes =votes+?  WHERE name= ?", (1,vote,))
              pres_vt.commit()
-             print('Voted for', vote)
+             #print('Voted for', vote)
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
 
@@ -684,7 +642,7 @@ def res_():
              vote = request.form['like']
              v.execute("UPDATE Apewosika SET votes =votes+?  WHERE name= ?", (1,vote,))
              pres_vt.commit()
-             print('Voted for', vote)
+             #print('Voted for', vote)
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
 
@@ -698,7 +656,7 @@ def res_():
              vote = request.form['like']
              v.execute("UPDATE Kwaprow SET votes =votes+?  WHERE name= ?", (1,vote,))
              pres_vt.commit()
-             print('Voted for', vote)
+             #print('Voted for', vote)
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
 
@@ -713,7 +671,7 @@ def res_():
              vote = request.form['like']
              v.execute("UPDATE Amamoma SET votes =votes+?  WHERE name= ?", (1,vote,))
              pres_vt.commit()
-             print('Voted for', vote)
+             #print('Voted for', vote)
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
 
@@ -727,12 +685,12 @@ def res_():
              vote = request.form['like']
              v.execute("UPDATE Amamoma SET votes =votes+?  WHERE name= ?", (1,vote,))
              pres_vt.commit()
-             print('Voted for', vote)
+             #print('Voted for', vote)
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
 
     else:
-        return('You are from somewhere maybe Space')
+        return redirect(url_for('done'))
 
 @app.route('/done')
 def done():
@@ -741,8 +699,8 @@ def done():
 
 @app.route('/error')
 def error():
-    e = msg()
-    return e
+    return msg()
+
 
 
 @app.route('/results')
@@ -878,10 +836,6 @@ def result():
 
 
 
-
-
-
-
     f.execute("SELECT * from ATL_hall")
     atl = f.fetchall()
     f.execute("SELECT SUM(votes) from ATL_hall")
@@ -997,12 +951,6 @@ def result():
 
 
 
-
-
-
-
-
-
     f.execute("SELECT * from Amamoma")
     ama = f.fetchall()
     f.execute("SELECT SUM(votes) from Amamoma")
@@ -1060,8 +1008,7 @@ def result():
 def page_not_found(error):
     return render_template('page_not_found.html'), 404
 
-
 if __name__ == '__main__':
     app.secret_key = b'haha... its a generated key' # i had an error when i was running the app i guess we can use another secured method like a random number generator or something
     # images = Images(app)
-    app.run(debug=True, port=7000)
+    app.run(debug=True)
