@@ -7,32 +7,32 @@ import sqlite3 as sql
 
 
 
-
-def choir_view(wing_name2):
+def cordinators_view(wing_name2):
     pres_vt = sql.connect('polls.db')
     v = pres_vt.cursor()
     with open(os.path.join('./seed/data.json')) as file:
         data = json.load(file)
-        role = data['Choir-President']['role']
-        name = data['Choir-President']['name']
-        img = data['Choir-President']['images']
+        role = data['Schools Coordinator']['role']
+        name = data['Schools Coordinator']['name']
+        img = data['Schools Coordinator']['images']
 
     if request.method == 'POST':
          vote = request.form['like']
-         v.execute("UPDATE choir_president SET votes =votes+?  WHERE name= ?", (1,vote,))
+         v.execute("UPDATE sch_cord SET votes =votes+?  WHERE name= ?", (1,vote,))
          pres_vt.commit()
          #print('Voted for', vote)
          
-         ######################
+         
+         ########################################
          if wing_name2 == 'Organizers':
              return redirect(url_for('cs'))
-         elif wing_name2 == 'Sch.Cord':
-             return redirect(url_for('sc')) 
          elif wing_name2 == 'Evangelism':
-             return redirect(url_for('evang'))
+             return redirect(url_for('evang')) 
+         elif wing_name2 == 'Choir':
+             return redirect(url_for('choir')) 
          else:
              return redirect(url_for('hall_name'))
 
-         ######################
+         #############################################3
          return redirect(url_for('hall_name'))  
-    return render_template('choir.html', role= role, name=name, img=img, wing_name2=wing_name2)
+    return render_template('sc.html', role= role, name=name, img=img, wing_name2=wing_name2)

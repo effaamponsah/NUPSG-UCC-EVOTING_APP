@@ -3,18 +3,13 @@ from db import *
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import json, os
-from error import msg
-from time import sleep
 
-from views.choir import *
 
-import sqlite3 as sql
 
-wing_name=''
-wing_name2=''
-hall=''
-c_residence=''
+engine = create_engine('sqlite:///tut.db', echo=False)
 
+Session = sessionmaker(bind=engine)
+dennis = Session()
 
 def admin_view():
     if request.method == 'POST':
