@@ -1,7 +1,7 @@
 
 from flask import Flask, render_template, session, request, flash, url_for, get_flashed_messages, redirect, make_response, g
 import json, os
-import sqlite3 as sql
+from utils.counter import increment
 
 
 wing_name=''
@@ -10,8 +10,6 @@ hall=''
 c_residence=''
 
 def evangelism_view(wing):
-    pres_vt = sql.connect('polls.db')
-    v = pres_vt.cursor()
     with open(os.path.join('./seed/data.json')) as file:
         data = json.load(file)
         role = data['Evangelism-Coordinator']['role']
@@ -20,8 +18,7 @@ def evangelism_view(wing):
 
     if request.method == 'POST':
          vote = request.form['like']
-         v.execute("UPDATE evang_cord SET votes =votes+?  WHERE name= ?", (1,vote,))
-         pres_vt.commit()
+         increment('evang_cord', vote)
          #print('Voted for', vote)
          
          ######################

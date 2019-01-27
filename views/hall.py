@@ -1,7 +1,7 @@
 
 from flask import Flask, render_template, session, request, flash, url_for, get_flashed_messages, redirect, make_response, g
 import json, os
-import sqlite3 as sql
+from utils.counter import increment
 
 
 wing_name=''
@@ -10,8 +10,6 @@ wing_name2=''
 
 
 def hall_view(hall, c_residence):
-    pres_vt = sql.connect('polls.db')
-    v = pres_vt.cursor()
     #print('Hall', hall)
     #print('Current', c_residence)
     # if hall and c_residence == 'ATL':
@@ -22,9 +20,7 @@ def hall_view(hall, c_residence):
             name = data['ATL-HALL']['name']
             img = data['ATL-HALL']['images']
         if request.method == 'POST':
-            vote = request.form['like']
-            v.execute("UPDATE ATL_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
-            pres_vt.commit()
+            increment('ATL_hall', vote)
             #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
@@ -40,8 +36,7 @@ def hall_view(hall, c_residence):
             img = data['KNH-HALL']['images']
         if request.method == 'POST':
             vote = request.form['like']
-            v.execute("UPDATE KNH_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
-            pres_vt.commit()
+            increment('KNH_hall', vote)
             #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
@@ -57,8 +52,7 @@ def hall_view(hall, c_residence):
             img = data['Valco-HALL']['images']
         if request.method == 'POST':
             vote = request.form['like']
-            v.execute("UPDATE Valco_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
-            pres_vt.commit()
+            increment('Valco_hall', vote)
             #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
@@ -74,8 +68,7 @@ def hall_view(hall, c_residence):
             img = data['Oguaa-HALL']['images']
         if request.method == 'POST':
             vote = request.form['like']
-            v.execute("UPDATE Oguaa_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
-            pres_vt.commit()
+            increment('Oguaa_hall', vote)
             #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
@@ -91,8 +84,7 @@ def hall_view(hall, c_residence):
             img = data['Casford-HALL']['images']
         if request.method == 'POST':
             vote = request.form['like']
-            v.execute("UPDATE Casford_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
-            pres_vt.commit()
+            increment('Casford_hall', vote)
             #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
@@ -108,9 +100,8 @@ def hall_view(hall, c_residence):
             img = data['SRC-HALL']['images']
         if request.method == 'POST':
             vote = request.form['like']
-            v.execute("UPDATE SRC_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
-            pres_vt.commit()
             #print('Voted for', vote)
+            increment('SRC_hall', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
             else:
@@ -126,8 +117,7 @@ def hall_view(hall, c_residence):
             img = data['SRC-HALL']['images']
         if request.method == 'POST':
             vote = request.form['like']
-            v.execute("UPDATE SRC_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
-            pres_vt.commit()
+            increment('SRC_hall', vote)
             #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
@@ -144,8 +134,7 @@ def hall_view(hall, c_residence):
             img = data['Adehye-HALL']['images']
         if request.method == 'POST':
             vote = request.form['like']
-            v.execute("UPDATE Adehye_hall SET votes =votes+?  WHERE name= ?", (1,vote,))
-            pres_vt.commit()
+            increment('Adehye_hall', vote)
             ##print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))
@@ -162,8 +151,7 @@ def hall_view(hall, c_residence):
             img = data['Superannuation-Hostel']['images']
         if request.method == 'POST':
             vote = request.form['like']
-            v.execute("UPDATE Superannuation SET votes =votes+?  WHERE name= ?", (1,vote,))
-            pres_vt.commit()
+            increment('Superannuation', vote)
             #print('Voted for', vote)
             if hall == c_residence:
                 return redirect(url_for('done'))

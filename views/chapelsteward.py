@@ -1,16 +1,13 @@
 
 from flask import Flask, render_template, session, request, flash, url_for, get_flashed_messages, redirect, make_response, g
 import json, os
-import sqlite3 as sql
 
-
+from utils.counter import increment
 
 hall=''
 c_residence=''
 
 def chapelsteward_view(wing_name2):
-    pres_vt = sql.connect('polls.db')
-    v = pres_vt.cursor()
     with open(os.path.join('./seed/data.json')) as file:
         data = json.load(file)
         role = data['Chapel-Steward']['role']
@@ -18,10 +15,8 @@ def chapelsteward_view(wing_name2):
         img = data['Chapel-Steward']['images']
 
     if request.method == 'POST':
-
         vote = request.form['like']
-        v.execute("UPDATE chapel_steward SET votes =votes+?  WHERE name= ?", (1,vote,))
-        pres_vt.commit()
+        increment('chapel_steward', vote)
         #print('Voted for', vote)
 
         ############################
