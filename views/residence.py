@@ -114,7 +114,7 @@ def residence_view(c_residence):
              return redirect(url_for('done'))
         return render_template('c_res.html',role=role, name=name, img=img)
 
-    elif c_residence == 'SUPERANNUATION':
+    elif c_residence == 'Superannuation':
         with open(os.path.join('./seed/data.json')) as file:
             data = json.load(file)
             role = data['Superannuation-Hostel']['role']
