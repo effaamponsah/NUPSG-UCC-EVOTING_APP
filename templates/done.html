@@ -20,6 +20,14 @@
         window.onunload = function() {
           null;
         };
+        window.onbeforeunload = function () {
+        var inputs = document.getElementsByTagName("BUTTON");
+        for (var i in inputs) {
+            if (inputs[i].type == "submit") {
+                inputs[i].disabled = true;
+            }
+        }
+    };
       </script>
 </head>
 <body>
