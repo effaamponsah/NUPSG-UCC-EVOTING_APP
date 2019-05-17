@@ -19,16 +19,18 @@
     <h5><i>Please enter your Registration Number below to login</i></h5>
     <form action="/login" method="POST" class="cf" onsubmit="validate(this)">
         <div class="half left cf">
-            
-                {% with m = get_flashed_messages() %}
-                {% if m %}
-                {% for message in m %}
-                <!-- the next line is the error message -->
+
+            {% with m = get_flashed_messages() %}
+            {% if m %}
+            {% for message in m %}
+            <!-- the next line is the error message -->
+            <div style="position: absolute; background-color: red; top: 0%; font-size: 14px; font-weight: bold; padding-right:10px; padding-left: 10px; ">
                 <h1>{{ message }}</h1>
-                {% endfor %}
-                {% endif %}
-                {% endwith %}
-        
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+
             <input type="text" name="std_id" placeholder="Enter your index number" id="input-name">
             <input type="submit" value="LOGIN" id="input-submit">
         </div>
