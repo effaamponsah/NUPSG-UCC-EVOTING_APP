@@ -20,6 +20,7 @@ def hall_view(hall, c_residence):
             name = data['ATL-HALL']['name']
             img = data['ATL-HALL']['images']
         if request.method == 'POST':
+            vote = request.form['like']
             increment('ATL_hall', vote)
             #print('Voted for', vote)
             if hall == c_residence:
@@ -143,7 +144,7 @@ def hall_view(hall, c_residence):
         
         return render_template('hall.html',role=role, name=name, img=img, hall=hall, c_residence=c_residence)
 
-    elif hall == 'SUPERANNUATION':
+    elif hall == 'Superannuation':
         with open(os.path.join('./seed/data.json')) as file:
             data = json.load(file)
             role = data['Superannuation-Hostel']['role']
