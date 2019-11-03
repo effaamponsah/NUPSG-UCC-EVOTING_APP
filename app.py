@@ -1,6 +1,6 @@
 from flask import Flask, render_template, session, request, flash, url_for, get_flashed_messages, redirect, make_response, g
 import json, os
-from error import msg
+from views.error import msg
 from views.choir import choir_view
 from views.chapelsteward import chapelsteward_view
 from views.evangelism import evangelism_view
