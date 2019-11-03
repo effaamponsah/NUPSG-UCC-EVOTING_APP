@@ -1,0 +1,18 @@
+{
+    "President": {
+        "role": "President",
+        "name": ["President1's name", "President2's name"],
+        "images": [
+            "ps1.png",
+            "ps2.jpg"
+        ]
+    },
+    "Secretary": {
+        "role": "Secretary",
+        "name": ["Secretary1's name", "Secretary2's name"],
+        "images": [
+            "sec1.jpg",
+            "sec2.png"
+        ]
+    }
+}

@@ -19,6 +19,7 @@ def createstudents():
                 )
     finally:
         connection.commit()
+        print("Done Creating Tables")
 
 
 
@@ -32,6 +33,8 @@ def createpostitions():
                 )
     finally:
         connection.commit()
+        print("Done Creating Tables")
+
 
 
 def createTotalsTable():

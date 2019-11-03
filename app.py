@@ -194,4 +194,4 @@ def page_not_found(error):
 
 if __name__ == '__main__':
     app.secret_key = b'haha... its a generated key'
-    app.run(debug=True)
+    app.run()

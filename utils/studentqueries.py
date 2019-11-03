@@ -15,12 +15,6 @@ def studentLogin(indexNumber):
             query1 = "SELECT * FROM `students` WHERE `index_no`=%s"
             cursor.execute(query1, (indexNumber))
             result = cursor.fetchone()
-            # if len(result) == 0:
-            #     # NO user. GO ahead
-            #     pass
-            # else:
-            #     # User already exits
-            #     return result
     finally:
         return result
 

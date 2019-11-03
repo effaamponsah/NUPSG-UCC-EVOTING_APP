@@ -11,13 +11,16 @@ connection = pymysql.connect(
 
 
 '''
+######################################################################
+                                INSTRUCTIONS
+#######################################################################
 The example below shows how you should input the names of the candidates.
 Fill in the boxes with the names against each position
 
 Example:
 adehye =[ "Barbara", "Hannah" ]
 
-The above indicates that the candidates are Barbara and Hannah. You can enter as many 
+The above indicates that the candidates for adehye rep are Barbara and Hannah. You can enter as many 
 asiprants as possible.
 
 THAT IS THE ONLY THING TO CHANGE IN THIS FILE!!!!
@@ -291,7 +294,8 @@ def fillPositions():
     finally:
         with open('../seed/data.json','w') as out:
             json.dump(data,out)
-        connection.commit()                
+        connection.commit()
+        print("Done creating candidates")             
 
             
 

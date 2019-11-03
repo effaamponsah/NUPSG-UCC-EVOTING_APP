@@ -1,0 +1,99 @@
+Please follow the instructions below to successfully install and run the application.
+
+
+The instructions are devided into two sections.
+
+
+Initial Steps
+NB::The intial step must be done only once.
+
+1. Please download and install python3 if you dont not have it on the system.
+During the installation phase, add the path to environmental path.
+
+2. Connect to the internet open the project folder, open command prompt in the folder.
+
+3. In the terminal, type 'python3 install -r requirements.txt'. This will install the dependencies 
+ needed to run the project.
+
+4. After the step 3 installs the depencies, open WAMPSERVER and create a database called 'nupsg'.
+ You can disconnect your internet.
+
+5. Open command prompt in the folder 'setup' and type 'python3 createtables.py'
+
+6. Open the file 'fillme.py' inside the 'setup' folder and read the instructions in there to insert the names of the 
+ cadidates.
+
+7. Type 'python3 fillme.py' in the 'setup' folder as you did in 5.
+
+8. Place all images of the candidates into static folder. Each with a unique and simple name. 
+Example:: Presidential candidates can have the names as 'ps1.jpg' and 'ps2.jpg'.
+
+9. Open 'data.json' file inside the 'seed' folder. Under each position add the names of the images into the
+ images space provided. Make sure the image file name matches the names of the candidates. Take a look at 'sample_data.json'
+file if you are confused.
+
+
+
+
+
+
+Final Steps.
+1. To start the application, ensure that all the steps above have been done.
+
+2. In the folder of the project, type 'python3 app.py' in command prompt.
+
+3. Open your browser and type 'http://127.0.0.1:5000/admin'. This takes you to the admin page. Here we will have to add a 
+student since we don't have any student at the moment.
+NB::The admin page must be seen by only you guys. not the students.
+
+4. After adding the user, you can test the user by opening 'http://127.0.0.1:5000/' and logging in with the index number provided.
+
+
+5. To view the resutls after voting type 'http://127.0.0.1:5000/results'. This takes you to the page.
+
+6. To do bulk addition of students, take a look at 'sample_students.csv' file and add the other students.
+Please refer below to see how Residences and wings are represented in the databse
+###############################################################################
+            NOTE How the wings and residencial *names* are written below and use the same thing
+################################################################################
+
+Residences
+
+Adehye                                                                    
+Oguaa
+ATL
+KNH
+Valco
+Casford
+SRC
+Graduate
+SUPERANNUATION
+SSNIT
+Kwaprow
+Apewosika
+Amamoma
+Ayensu
+
+Wings
+Organizers
+Evangelism
+Bible_Stdy
+Sch.Cord
+Jewels
+Choir
+Golden_vessels
+Prayer_warriors
+Singing_band
+Children_ministry
+Capable_women
+Vessels
+
+7. After adding the students, run 'python3 addStudents.py' in the command prompt at the 'setup' folder to add the students
+ to the db. The students can now vote
+
+
+8. Connect to a network(internet is not necessary).
+Navigate back to the project root and open 'app.py' file. On the end of the file where you see 'app.run()',
+Change it to 'app.run(host='ip_address')' where ip_address is the ip address of the host computer.
+Connect other computers to the network as well and enter your ip_address in their browser. They should be able to 
+vote as well.
