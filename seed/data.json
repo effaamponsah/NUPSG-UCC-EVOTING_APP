@@ -1,15 +1,13 @@
 {
-    "President":{
+    "President"  :{
         "role": "President",
         "name": [
-            "Evans D. Ankrah",
+            "James",
             "Edward Larbi"
-            
         ],
         "images": [
             "ASST.-PRAYER-SECRETARY---EVANS-DWOMOH-ANKRAH-(0240416825).gif",
             "KNH-REP-I---EDWARD-LARBI-(0247744692-0260757174).gif"
-           
         ]
         
     },
@@ -20,34 +18,23 @@
         "name": [
             "Rosemond Asmah",
             "Gifty O. Gyan"
-            
         ],
         "images": [
             "OGUAA-REP-II---ROSEMOND-ASMAH-(0578085312)2.jpg",
             "Gifty Gyan2.jpg"
-            
         ]
-           
-
     },
-
-
 
     "Prayer-Secretary":{
         "role": "Prayer Secretary",
         "name": [
             "Enoch T. Alorzokey",
-            "Edwin O. Verner"
-          
-           
+            "Edwin O. Verner"           
         ],
         "images": [
             "Enoch Tetteh Alorzokey- Prayer Secretary.jpg",
             "Edwin Obeng Verner- Prayer Secretary.jpg"
-            
         ]
-           
-
     },
 
 
@@ -56,7 +43,6 @@
         "name": [
             "Emmanuel D. Sinaman",
             "Daniel K. Amoako"
-           
         ],
         "images": [
             "Dadzie Sinaman.jpg",
@@ -70,14 +56,11 @@
         "name": [
             "Veronica Abban",
             "Winifred Abakah"
-           
         ],
         "images": [
             "ASST.-SCHOOLS'-COORDINATOR---VERONICA-ABBAN-(0576751785).gif",
             "Winifred Abakah- Schools Coordinator.jpg"
         ]
-           
-
     },
 
 
@@ -86,16 +69,11 @@
         "name": [
             "Esther Tawiah",
             "Abigail Tackie"
-           
-           
         ],
         "images": [
             "Esther.jpg",
             "Abigail Tackie- Valco rep.jpg"
-            
         ]
-           
-
     },
 
 
@@ -104,14 +82,11 @@
         "name": [
             "Mercy Bempong",
             "Afia B. Birago"
-           
         ],
         "images": [
             "Mercy Benpong.jpg",
             "ASST.-CHAPEL-STEWARD---EFIA-BIRAGO-BAAFI-(0245387226).jpg"
         ]
-           
-
     },
 
 
@@ -119,15 +94,10 @@
         "role": "Evangelism Coordinator",
         "name": [
             "Gifty Asiamah"
-            
-           
         ],
         "images": [
             "Gifty Assiamah - Evangelism Coordinator.jpg"
-            
         ]
-           
-
     },
 
     
@@ -136,7 +106,6 @@
         "name": [
             "Nana Adjei",
             "Michael A. Sarkodie"
-           
         ],
         "images": [
             "Nana Oye Oko Adjei- ATL rep.jpg",
@@ -149,7 +118,6 @@
         "name": [
             "Freda Odamtten",
             "Millicent Selassie"
-           
         ],
         "images": [
             "Freda Odamtten- KNH rep.jpg",
@@ -169,10 +137,7 @@
         "images": [
             "Adelaide Oppong.jpg",
             "VALCO-REP-II---SAMPSON-NKANSAH-(0548560539).gif"
-           
         ]
-           
-
     },
 
     "Casford-HALL":{
@@ -180,14 +145,11 @@
         "name": [
             "Prince F. Armah",
             "Samuel Takyi"
-           
         ],
         "images": [
             "Prince Fiifi Armah- Casford Rep.jpg",
             "Samuel Takyi-Casford rep.jpg"
         ]
-           
-
     },
 
 
@@ -202,8 +164,6 @@
             "SRC-REP-I---JENNIFER-NAKIE-TETTEH-(0247230238).jpg",
             "Rachael Adoma Akosah - SRC rep.jpg"
         ]
-           
-
     },
 
 
@@ -211,15 +171,10 @@
         "role": "Adehye-HALL REP",
         "name": [
             "Ruby Salifu"
-            
-           
         ],
         "images": [
             "Ruby Salifu- Adehye Rep.jpg"
-            
         ]
-           
-
     },
 
     "Oguaa-HALL":{
@@ -227,14 +182,11 @@
         "name": [
             "Foster Segbe",
             "Stella Owusu"
-           
         ],
         "images": [
             "Foster Segbe-Oguaa rep.jpg",
             "Stella.jpg"
         ]
-           
-
     },
 
     "Superannuation-Hostel":{
@@ -242,14 +194,11 @@
         "name": [
             "Benjamin Antwi",
             "Theophilus O. Banahene"
-           
         ],
         "images": [
             "Benjamin owusu Antwi Junior - Superannuation rep.jpg",
             "Theopilus Owusu Banahene-Superannuation rep.jpg"
         ]
-           
-
     },
 
     
@@ -258,30 +207,23 @@
         "name": [
             "Mary K. Ashai",
             "Prosper E. Atitse"
-           
         ],
         "images": [
             "Mary Kailey Ashai-Apewosika rep.jpg",
             "Prosper Eyram Atitse- Apewosika Rep.jpg"
         ]
-           
-
     },
-
 
     "Kwaprow":{
         "role": "Kwaprow REP",
         "name": [
             "Prince Dokyi",
             "Esther O. Acheampong"
-           
         ],
         "images": [
             "Prince Dokyi- Kwaprow rep.jpg",
             "Esther Owusu Acheampong- Kwaprow rep.jpg"
         ]
-           
-
     },
 
     "Amamoma":{
@@ -297,8 +239,6 @@
             "AMAMOMA-REP-II---ROSEMARY-OFOSUWAA-(0549599860).gif",
             "Joseph Manfo Amanful- Amamoma rep.jpg"
         ]
-           
-
     },
 
     "Choir-President":{
@@ -307,15 +247,12 @@
             "Alberta A. Affum",
             "Richard O. Boateng",
             "Grace A. Aryeequaye"
-           
         ],
         "images": [
             "Alberta Ama Affum- Choir President.jpg",
             "Richard Oduro Boateng-Choir president.jpg",
             "Grace Adaku Aryeequaye-Choir president.jpg"
         ]
-           
-
     }
 
 

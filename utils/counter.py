@@ -2,25 +2,38 @@
 # and name of the voted for aspirant and increments 
 # it by one
 
-import sqlite3 as sql
+import pymysql
+
+connection = pymysql.connect(
+    host="localhost",
+    user="root",
+    password="",
+    db="nupsg",
+    charset="utf8mb4",
+    cursorclass=pymysql.cursors.DictCursor,
+)
 
 
 def increment(position,name):
-    # dbConnect = sql.connect('polls.db')
-    # coursor = dbConnect.cursor()
-    # coursor.execute("UPDATE "+position+" SET votes =votes+?  WHERE name= ?", (1, name))
-    # dbConnect.commit()
-    # x = 'added'
-    # print (x)
     try:
-        with sql.connect('polls.db') as dbConnect:
-            coursor = dbConnect.cursor()
-            coursor.execute("UPDATE "+position+" SET votes =votes+?  WHERE name= ?", (1, name))
-            dbConnect.commit()
-            message = 'Success'
-    except:
-        dbConnect.rollback()
-        message = 'Error Occured'
+        with connection.cursor() as cursor:
+            query2 = "UPDATE "+position+" SET `votes`=votes+%s WHERE `name`=%s"
+            cursor.execute(query2, (1, name))
+            result = cursor.fetchone()
+           
     finally:
-        dbConnect.close()
-        print(message)
+        connection.commit()
+
+
+def viewResults(table):
+    try:
+        with connection.cursor() as cursor:
+            query1 = "SELECT `name`,`votes` FROM "+table
+            cursor.execute(query1)
+            result = cursor.fetchall()
+           
+    finally:
+        return result
+    
+
+viewResults('president')
